@@ -1,36 +1,47 @@
-print("Witaj w grze papier, kamien, nozyce")
+import random
 
-gracz_1 = input("Podaj imię gracza 1 : " )
-gracz_2 = input("Podaj imię gracza 2: ")
+print("Witaj w grze papier, kamień, nożyce")
 
-gracz_1_odp = input(" %s: Wybierz kamien, papier lub nozyce: " % gracz_1)
-gracz_2_odp = input(" %s: Wybierz kamien, papier lub nozyce: " % gracz_2)
-
-def porownaj( odpowiedz_1 , odpowiedz_2):
-    if odpowiedz_1 == odpowiedz_2:
-        return ("remis")
-    elif odpowiedz_1 == "kamien":
-        if odpowiedz_2 == "papier":
-            return("Wygrywa papier")
-        else:
-            return("Wygrywa kamien")
-            
-    elif odpowiedz_1 == "nozyce":
-        if odpowiedz_2 == "kamien":
-            return("Wygrywa kamien")
-        else:
-            return("Wygrywa papier")
-
-    elif odpowiedz_1 == "papier":
-        if odpowiedz_2 == "nozyce":
-            return("Wygrywaja nozyce")
-        else:
-            return("Wygrywa kamien")
-         
-        
+c = ["kamień", "papier", "nożyce"]
 
 
+gracz = None
+komputer = random.choice(c)
 
 
+while gracz not in c:
+   gracz = input("Wybierz papier, kamień, nożyce: ")
 
-print(porownaj(gracz_1_odp, gracz_2_odp))
+
+if gracz == komputer:
+    print("komputer: ", komputer)
+    print("gracz: ", gracz)
+    print("Remis")
+elif gracz == "kamień":
+    if komputer == "papier":
+        print("komputer: ", komputer)
+        print("gracz: ", gracz)
+        print("Przegrałeś")
+    if komputer == "nożyce":
+        print("komputer: ", komputer)
+        print("gracz: ", gracz)
+        print("Wygrałeś")
+elif gracz == "nożyce":
+    if komputer == "kamień":
+        print("komputer: ", komputer)
+        print("gracz: ", gracz)
+        print("Przegrałeś")
+    if komputer == "papier":
+        print("komputer: ", komputer)
+        print("gracz: ", gracz)
+        print("Wygrałeś")
+elif gracz == "papier":
+    if komputer == "nożyce":
+        print("komputer: ", komputer)
+        print("gracz: ", gracz)
+        print("Przegrałeś")
+    if komputer == "kamień":
+        print("komputer: ", komputer)
+        print("gracz: ", gracz)
+        print("Wygrałeś")
+
